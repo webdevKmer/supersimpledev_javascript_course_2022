@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7 - 7h</title>
+</head>
+<body>
+    <h3>Cart Quantity Project</h3>
+    <p>Cart Items (<span id="cart-qty">0</span>)</p>
+    <button onclick="updateCartQuantity(1)">Add to Cart</button>
+    <button onclick="updateCartQuantity(-1)">Remove from Cart</button>
+    <button onclick="updateCartQuantity(4)">+4</button>
+    <button onclick="updateCartQuantity(5)">+5</button>
+    <button onclick="updateCartQuantity(-2)">-2</button>
+    <button onclick="updateCartQuantity(-3)">-3</button>
+    <button onclick="updateCartQuantity('a')">a</button>
+
+    <script>
+       const cartElt = document.getElementById('cart-qty')
+       console.log(cartElt.innerText);
+
+       function updateCartQuantity(num) {
+        if (num >= 0){
+            if(eval(cartElt.innerText)+num > 10){
+                console.log('The Cart is full!');
+                return
+            }else{
+                cartElt.innerText = eval(cartElt.innerText)+num
+                console.log(num,'added...');
+            }
+        } else if (num < 0) {
+            if(eval(cartElt.innerText)+num < 0){
+                console.log('Not enough Items in the Cart');
+                return
+            }else{
+                cartElt.innerText = eval(cartElt.innerText)+num
+                console.log(Math.abs(num),'removed...');
+            }
+        } else {
+            console.log('This quantity is invalid...');
+            return
+        }
+       }
+    </script>
+</body>
+</html>
