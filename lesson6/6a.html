@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6 - 6a</title>
+</head>
+<body>
+    
+    <script>
+        let date = new Date()
+        const hours = date.getHours()
+        if(hours > 6 && hours <= 12){
+            console.log('Good Morning!');
+        } else if(hours > 13 && hours <= 17){
+            console.log('Good Afternoon!');
+        } else {
+            console.log('Good Night!');
+        }
+        console.log(hours);
+    </script>
+</body>
+</html>
