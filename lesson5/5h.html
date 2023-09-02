@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5 - 5h</title>
+</head>
+<body>
+    <h3>Cart Quantity Project</h3>
+    <p>Cart Items (<span id="cart-qty">0</span>)</p>
+    <button onclick="addOne()">Add to Cart</button>
+    <button onclick="removeOne()">Remove from Cart</button>
+    <button onclick="addFour()">+4</button>
+    <button onclick="addFive()">+5</button>
+    <button onclick="removeTwo()">-2</button>
+    <button onclick="removeThree()">-3</button>
+
+    <script>
+       const cartElt = document.getElementById('cart-qty')
+       console.log(cartElt.innerText);
+
+       function addOne() {
+        cartElt.innerText = eval(cartElt.innerText)+1
+        console.log('1 added...');
+       }
+       function addFour() {
+        cartElt.innerText = eval(cartElt.innerText)+4
+        console.log('4 added...');
+       }
+       function addFive() {
+        cartElt.innerText = eval(cartElt.innerText)+5
+        console.log('5 added...');
+       }
+       function removeOne() {
+        cartElt.innerText = eval(cartElt.innerText)-1
+        console.log('1 removed...');
+       }
+       function removeTwo() {
+        cartElt.innerText = eval(cartElt.innerText)-2
+        console.log('2 removed...');
+       }
+       function removeThree() {
+        cartElt.innerText = eval(cartElt.innerText)-3
+        console.log('3 removed...');
+       }
+    </script>
+</body>
+</html>
