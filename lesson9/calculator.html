@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <p>
+        <button onclick="updateCalculation(1)">1</button>
+        <button onclick="updateCalculation(2)">2</button>
+        <button onclick="updateCalculation(3)">3</button>
+    </p>
+    <p>
+        <button onclick="updateCalculation(4)">4</button>
+        <button onclick="updateCalculation(5)">5</button>
+        <button onclick="updateCalculation(6)">6</button>
+    </p>
+    <p>
+        <button onclick="updateCalculation(7)">7</button>
+        <button onclick="updateCalculation(8)">8</button>
+        <button onclick="updateCalculation(9)">9</button>
+    </p>
+    <p>
+        <button onclick="updateCalculation(0)">0</button>
+        <button onclick="updateCalculation('+')">+</button>
+        <button onclick="updateCalculation('-')">-</button>
+    </p>
+    <p>
+        <button onclick="updateCalculation('x')">x</button>
+        <button onclick="updateCalculation('/')">/</button>
+        <button onclick="solve()">=</button>
+    </p>
+    <p id="calculation"></p>
+
+    <script>
+        const calcElt = document.getElementById('calculation')
+
+        if(localStorage.getItem('calculation') != null){
+            localStorage.getItem('calculation')
+        } else {
+            localStorage.setItem('calculation', '')
+        }
+        
+        let calculation = localStorage.getItem('calculation')
+        console.log(calculation);
+
+        function updateCalculation(num) {
+            if(num === '+'){
+                calculation += ' + '
+            } else if(num === '-'){
+                calculation += ' - '
+            } else if(num === 'x'){
+                calculation += ' * '
+            } else {
+                calculation += num
+                localStorage.setItem('calculation', calculation)
+            }
+            console.log(calculation);
+            calcElt.textContent = calculation
+        }
+        
+        function solve() {
+            if(calculation === ""){
+                return
+            } else {
+                calculation = eval(calculation)
+                console.log(calculation);
+                calcElt.textContent = calculation
+                // calculation=""
+            }
+        }
+    </script>
+</body>
+</html>

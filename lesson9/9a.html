@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9 - 9a</title>
+</head>
+<body>
+    <p>
+        <button class="btn1" onclick="display(btn1.textContent)">tails</button>
+        <button class="btn2" onclick="display(btn2.textContent)">heads</button>
+        <p>You choose: <span id="choice"></span></p>
+    </p>
+    <p>
+        <input type="text" id="textinp" onkeydown="displayName()">
+        <button onclick="displayName()">Submit</button>
+        <p>Your name is: <span id="name"></span></p>
+    </p>
+    <script>
+        const btn1 = document.querySelector(".btn1")
+        const btn2 = document.querySelector('.btn2')
+        const choiceElt = document.querySelector('#choice')
+
+        const inpElt = document.querySelector('#textinp')
+        const nameElt = document.querySelector('#name')
+
+
+        function display(text) {
+            console.log("You choose:", text);
+            choiceElt.textContent = text
+        }
+        function displayName() {
+            nameElt.textContent = inpElt.value
+        }
+
+    </script>
+</body>
+</html>

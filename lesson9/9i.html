@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9 - 9i</title>
+</head>
+<body>
+    <h3>Cart Quantity Project</h3>
+    <p>Cart Items (<span id="cart-qty">0</span>)</p>
+    <button onclick="updateCartQuantity(1)">Add to Cart</button>
+    <button onclick="updateCartQuantity(-1)">Remove from Cart</button>
+    <button onclick="updateCartQuantity(4)">+4</button>
+    <button onclick="updateCartQuantity(5)">+5</button>
+    <button onclick="updateCartQuantity(-2)">-2</button>
+    <button onclick="updateCartQuantity(-3)">-3</button>
+    <button onclick="updateCartQuantity('a')">a</button>
+
+    <p id="message"></p>
+
+    <script>
+       const cartElt = document.getElementById('cart-qty')
+       const messageElt = document.getElementById('message')
+      
+       function updateCartQuantity(num) {
+        let message = ""
+        messageElt.textContent = ''
+        if (num >= 0){
+            if(eval(cartElt.innerText)+num > 10){
+                message = 'The Cart is full!'
+                console.log(message);
+                messageElt.textContent = message
+                return
+            }else{
+                message = `${num} added...`
+                cartElt.innerText = eval(cartElt.innerText)+num
+                console.log(message);
+            }
+        } else if (num < 0) {
+            if(eval(cartElt.innerText)+num < 0){
+                message = 'Not enough Items in the Cart'
+                console.log(message);
+                messageElt.textContent = message
+                return
+            }else{
+                message = `${Math.abs(num)} removed...`
+                cartElt.innerText = eval(cartElt.innerText)+num
+                console.log(message);
+                messageElt.textContent = message
+            }
+        } else {
+            message = 'This quantity is invalid...'
+            console.log(message);
+            messageElt.textContent = message
+            return
+        }
+       }
+    </script>
+</body>
+</html>
