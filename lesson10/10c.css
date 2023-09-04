@@ -1,0 +1,15 @@
+.btn{
+    padding: .5rem 1rem;
+    font-weight: bold;
+    border: none;
+    box-shadow: 2px 2px 8px grey;
+    border-radius: .25rem;
+    background-color: rgb(230, 230, 230);
+}
+.btn:hover{
+    cursor: pointer;
+}
+.is-toggled{
+    color: white;
+    background-color: black;
+}
