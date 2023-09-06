@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 - 11i</title>
+</head>
+<body>    
+
+    <script>
+        let arr1 = [10, 5, 3, 7]
+
+        function addNum(arr, num) {
+            let newArr = []
+           for(i in arr){
+                newArr.push(arr[i]+num)
+           }
+            return newArr
+        }
+        console.log(addNum([2, 4, 6, 8], 5));
+        console.log(addNum([-2, -1, 99, 105], 2));
+        console.log(addNum(arr1, 20));
+    </script>
+</body>
+</html>

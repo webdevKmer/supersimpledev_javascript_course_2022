@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 - 11n</title>
+</head>
+<body>    
+    <script>
+        let arr1 = ['allo', 'maman', 'ici', 'bebe', 'ici']
+        let arr2 = ['allo', 'maman', 'allo', 'bebe', 'allo']
+        let arr3 = ['pepe', 'bolo', 'bolo', 'pepe', 'zigo', 'pepe', 'bolo', 'bolo', 'pepe', 'zigo']
+
+        function countWords(arr) {
+            let wordCounter = {}
+           arr.forEach(elt => {
+            // console.log(elt);
+            if(!wordCounter[elt]){
+                wordCounter[elt] = 1
+            } else {
+                wordCounter[elt] = wordCounter[elt] + 1
+            }
+        });
+        console.log(wordCounter);
+        }
+        countWords(arr1)
+        countWords(arr2)
+        countWords(arr3)
+    </script>
+</body>
+</html>

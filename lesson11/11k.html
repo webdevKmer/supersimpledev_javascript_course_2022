@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 - 11k</title>
+</head>
+<body>    
+    <script>
+        let arr1 = [10, 5, -3, 7]
+
+        function countPositive(arr) {
+            let pos = 0
+           for(i in arr1){
+                if (arr[i] > 0){
+                    pos += 1
+                }
+           }
+            return pos
+        }
+        console.log(countPositive([2, 4, 6, 8]));
+        console.log(countPositive([-2, -1, 99, 105]));
+        console.log(countPositive(arr1));
+    </script>
+</body>
+</html>

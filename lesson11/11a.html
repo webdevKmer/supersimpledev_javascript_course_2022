@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 - 11a</title>
+</head>
+<body>
+    
+
+    <script>
+        const nums = [10, 20, 30]
+        nums[2] = 90
+        console.log(nums);
+
+        function getLastValue(arr) {
+            const lastIndex = arr.length - 1
+            return arr[lastIndex]
+        }
+
+        const arr1 = [1, 20, 23, 8, 65]
+        const arr2 = ['hi', 'Morgan', 'Dexter']
+
+        console.log(getLastValue(arr1));
+
+        function arraySwap(arr) {
+            const lastIndex = arr.length - 1
+            console.log(arr);
+            let firstElt = arr.shift()
+            console.log(arr);
+            let lastElt = arr.pop()
+            console.log(arr);
+            arr.unshift(lastElt)
+            console.log(arr);
+            arr.push(firstElt)
+            console.log(arr);
+            return arr
+        }
+
+        console.log(arraySwap(arr1));
+    </script>
+</body>
+</html>

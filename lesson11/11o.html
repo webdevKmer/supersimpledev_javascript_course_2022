@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 - 11o</title>
+</head>
+<body>    
+    <script>
+        let arr1 = ['allo', 'maman', 'ici', 'bebe', 'ici']
+        let arr2 = ['allo', 'maman', 'allo', 'bebe', 'allo']
+        let arr3 = ['pepe', 'bolo', 'bolo', 'pepe', 'zigo', 'pepe', 'bolo', 'bolo', 'pepe', 'zigo']
+
+        function searchWord(arr) {
+            return arr.indexOf('zigo')
+        }
+        function findIndex(arr, word) {
+            return arr.indexOf(word)
+        }
+        console.log(searchWord(arr1));
+        console.log(searchWord(arr2));
+        console.log(searchWord(arr3));
+        console.log(findIndex(arr1, 'bebe'));
+        console.log(findIndex(arr2, 'maman'));
+        console.log(findIndex(arr3, 'yellow'));
+        
+    </script>
+</body>
+</html>

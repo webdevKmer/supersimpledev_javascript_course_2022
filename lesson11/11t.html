@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 - 11t</title>
+</head>
+<body>    
+    <script>
+        let arr1 = ['allo', 'maman', 'ici', 'bebe', 'ici', 'bebe', 'ici']
+       
+        function removeLastOccurWord(arr, word, limit) {
+            let newArr = []
+            let occur = 0
+            let arrTmp = arr.slice()
+            arrTmp.reverse()
+            for (let i = 0; i <= arrTmp.length-1; i++){
+                if(arrTmp[i] === word){
+                    if(occur < limit){
+                        occur += 1
+                        continue
+                    } else {
+                        newArr.push(arrTmp[i])
+                    }
+                } else {
+                    newArr.push(arrTmp[i])
+                }
+            }
+            return newArr.reverse()
+        }
+        console.log(removeLastOccurWord(arr1, 'ici', 2));
+        console.log(arr1);
+    </script>
+</body>
+</html>

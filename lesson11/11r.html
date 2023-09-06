@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 - 11r</title>
+</head>
+<body>    
+    <script>
+        let arr1 = ['allo', 'maman', 'ici', 'bebe', 'ici', 'bebe', 'ici']
+       
+        function removeWord(arr, word) {
+            let newArr = []
+            for (let i = 0; i < arr.length-1; i++){
+                if(arr[i] === word){
+                    continue
+                } else {
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+        function removeOccurWord(arr, word, limit) {
+            let newArr = []
+            let occur = 0
+            for (let i = 0; i <= arr.length-1; i++){
+                if(arr[i] === word){
+                    if(occur < limit){
+                        occur += 1
+                        console.log(occur);
+                        continue
+                    } else {
+                        newArr.push(arr[i])
+                    }
+                } else {
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+
+        // console.log(removeWord(arr1, 'maman'));
+        console.log(removeOccurWord(arr1, 'ici', 2));
+      
+        
+    </script>
+</body>
+</html>

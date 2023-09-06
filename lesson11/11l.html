@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 11 - 11l</title>
+</head>
+<body>    
+    <script>
+        let arr1 = [10, 5, -3, 7]
+
+
+        function minMax(arr) {
+            let num = {}
+            if (arr.length === 0){
+                num.min = null
+                num.max = null
+            } else if (arr.length === 1){
+                num.min = num.max = arr[0]
+            } else {
+                arr.sort()
+                num.min = arr.shift()
+                num.max = arr.pop()
+            }
+
+            return num
+        }
+        console.log(minMax([2, 4, 6, 8]));
+        console.log(minMax([-2, -1, 99, 105]));
+        console.log(minMax(arr1));
+        console.log(minMax([3]));
+        console.log(minMax([]));
+    </script>
+</body>
+</html>
